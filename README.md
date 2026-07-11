@@ -22,15 +22,16 @@ IncidentMind accelerates incident response by orchestrating AI agents that inves
 
 ### Incident Investigation Workspace
 
-> *(Insert Incident Workspace screenshot here)*
+> <img width="1353" height="635" alt="image" src="https://github.com/user-attachments/assets/2c535cbb-8720-4850-80af-10169df96957" />
+
 
 ### Analytics
 
-> *(Insert Analytics screenshot here)*
+> <img width="1349" height="633" alt="image" src="https://github.com/user-attachments/assets/9087f3a0-1664-457c-8310-6f085014864b" />
 
 ### Knowledge Base
 
-> *(Insert Knowledge Base screenshot here)*
+> <img width="1351" height="633" alt="image" src="https://github.com/user-attachments/assets/22c44e73-6c1c-4e79-b860-de743de3e7b0" />
 
 ---
 
