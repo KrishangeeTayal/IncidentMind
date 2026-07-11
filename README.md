@@ -1,8 +1,82 @@
 # IncidentMind
 
-> AI-powered Incident Response platform that helps engineers reduce MTTR (Mean Time To Resolution).
+> **AI-powered Incident Response Platform built with Mastra, Qdrant and Enkrypt AI.**
 
-IncidentMind assists engineers during incident triage and remediation. Every AI recommendation is reviewed by a human before any action is taken — the system **never** auto-deploys fixes.
+Reduce Mean Time To Resolution (MTTR) through intelligent multi-agent investigations, semantic knowledge retrieval and safe human-in-the-loop approvals.
+
+---
+
+## Problem
+
+When production incidents occur, engineering teams often spend valuable time manually correlating logs, metrics, deployment history and previous incidents before identifying the root cause.
+
+This delays recovery, increases downtime, and places unnecessary pressure on on-call engineers.
+
+IncidentMind accelerates incident response by orchestrating AI agents that investigate incidents, retrieve historical context, generate remediation recommendations, evaluate their safety, and always require human approval before any action is taken.
+
+---
+### Dashboard
+
+> <img width="1353" height="633" alt="image" src="https://github.com/user-attachments/assets/8d2185d7-7660-4d13-aa30-df7332b28f99" />
+
+
+### Incident Investigation Workspace
+
+> *(Insert Incident Workspace screenshot here)*
+
+### Analytics
+
+> *(Insert Analytics screenshot here)*
+
+### Knowledge Base
+
+> *(Insert Knowledge Base screenshot here)*
+
+---
+
+# Features
+
+- AI-powered incident investigation
+- Multi-agent orchestration using Mastra
+- Human-in-the-loop approval workflow
+- Semantic incident retrieval with Qdrant
+- AI safety evaluation using Enkrypt AI
+- Historical incident knowledge base
+- Operational analytics dashboard
+- Root cause analysis workflow
+- Evidence correlation
+- Interactive production incident simulator
+
+---
+
+# How It Works
+
+```text
+Production Alert
+        │
+        ▼
+Mastra Agent Workflow
+        │
+        ▼
+Collect Logs + Metrics + Traces
+        │
+        ▼
+Retrieve Similar Incidents (Qdrant)
+        │
+        ▼
+Root Cause Analysis
+        │
+        ▼
+Generate Recommendation
+        │
+        ▼
+Enkrypt AI Safety Evaluation
+        │
+        ▼
+Human Approval
+        │
+        ▼
+Incident Resolution
 
 ---
 
