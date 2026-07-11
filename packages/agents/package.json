@@ -1,0 +1,25 @@
+{
+  "name": "@incidentmind/agents",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable AI agent definitions (Mastra).",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No lint configured for agents package'",
+    "build": "echo 'Agents package is source-only'"
+  },
+  "dependencies": {
+    "@incidentmind/prompts": "workspace:*",
+    "@incidentmind/shared": "workspace:*",
+    "@incidentmind/tools": "workspace:*",
+    "@mastra/core": "^0.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,147 @@
+// IncidentMind - Prisma schema
+//
+// Models in this schema mirror the domain described in the project docs.
+// Keep relationships simple; do not over-engineer. The schema is the
+// single source of truth for the web app's persistence layer.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum IncidentSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum IncidentStatus {
+  OPEN
+  INVESTIGATING
+  MITIGATED
+  RESOLVED
+}
+
+enum ApprovalDecision {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum TimelineEventKind {
+  ALERT_RECEIVED
+  CLASSIFICATION
+  CONTEXT_RETRIEVED
+  ROOT_CAUSE
+  RECOMMENDATION
+  ENKRYPT_EVALUATION
+  HUMAN_DECISION
+  STATUS_CHANGE
+  NOTE
+}
+
+// ---------------------------------------------------------------------------
+// User
+// ---------------------------------------------------------------------------
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  // Incidents this user created (alert source / reporter).
+  createdIncidents Incident[]       @relation("IncidentCreatedBy")
+  // Incidents this user is currently the on-call owner of.
+  ownedIncidents   Incident[]       @relation("IncidentOwner")
+  // Approvals this user has acted on.
+  approvals        Approval[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Incident
+// ---------------------------------------------------------------------------
+
+model Incident {
+  id           String           @id @default(cuid())
+  title        String
+  description  String?
+  service      String
+  environment  String           // e.g. "production", "staging", "development"
+  severity     IncidentSeverity @default(MEDIUM)
+  status       IncidentStatus   @default(OPEN)
+  // Optional workflow correlation id from Mastra; useful for replay.
+  workflowRunId String?         @unique
+
+  // Reporting / ownership
+  createdById  String?
+  createdBy    User?            @relation("IncidentCreatedBy", fields: [createdById], references: [id])
+  ownerId      String?
+  owner        User?            @relation("IncidentOwner", fields: [ownerId], references: [id])
+
+  // Domain relations
+  timeline     TimelineEvent[]
+  approvals    Approval[]
+
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([status])
+  @@index([severity])
+  @@index([service])
+  @@index([createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// TimelineEvent
+// ---------------------------------------------------------------------------
+
+model TimelineEvent {
+  id          String           @id @default(cuid())
+  incidentId  String
+  incident    Incident         @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  kind        TimelineEventKind
+  // Free-form JSON payload. Kept loose on purpose; structure will firm up
+  // as agents start emitting real events.
+  payload     Json?
+  // The agent or actor that produced this event (e.g. "alert-intake-agent").
+  actor       String?
+  // Correlation id tying events across services / agents.
+  correlationId String?
+  createdAt   DateTime         @default(now())
+
+  @@index([incidentId, createdAt])
+  @@index([correlationId])
+}
+
+// ---------------------------------------------------------------------------
+// Approval
+// ---------------------------------------------------------------------------
+
+model Approval {
+  id            String           @id @default(cuid())
+  incidentId    String
+  incident      Incident         @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  decision      ApprovalDecision @default(PENDING)
+  // What was being approved (typically a recommendation payload).
+  payload       Json?
+  decidedById   String?
+  decidedBy     User?            @relation(fields: [decidedById], references: [id])
+  reason        String?
+  decidedAt     DateTime?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([incidentId])
+  @@index([decision])
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@incidentmind/prompts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LLM prompt templates for IncidentMind agents.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No lint configured for prompts package'",
+    "build": "echo 'Prompts package is source-only'"
+  },
+  "dependencies": {
+    "@incidentmind/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
