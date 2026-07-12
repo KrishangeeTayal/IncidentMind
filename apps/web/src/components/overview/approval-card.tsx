@@ -111,7 +111,7 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
 
       {/* Actions */}
       <footer className="flex items-center justify-end gap-2 pl-1.5 pt-1">
-        {decision === 'pending' ? (
+        {true ? (
           <>
            <Link
             href={`/incidents/${approval.incidentId}`}
