@@ -117,7 +117,7 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
             href={`/incidents/${approval.incidentId}`}
             className="mr-auto inline-flex h-8 items-center justify-center rounded-md border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50"
           >
-            Open Incident
+            🚨 TEST BUTTON 🚨
           </Link>
             <button
               type="button"
