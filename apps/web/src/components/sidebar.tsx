@@ -1,7 +1,8 @@
 'use client';
 
-// Sidebar — dark, slim, enterprise-style nav. Blue active state with a
-// thin indicator and rounded highlight. Enkrypt guard card at bottom.
+// Sidebar — sits below the top bar, carries the navigation and the
+// Enkrypt AI guard card at the bottom. Calm, minimal, light active
+// state, thin blue indicator. No visual weight where it isn't needed.
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -53,8 +54,8 @@ export function Sidebar(): JSX.Element {
   const pathname = usePathname() ?? '';
 
   return (
-    <aside className="hidden w-60 shrink-0 border-r border-slate-800 bg-slate-900 md:flex md:flex-col">
-      <nav className="flex-1 space-y-1 p-3" aria-label="Primary">
+    <aside className="hidden w-60 shrink-0 border-r border-slate-100 bg-white md:flex md:flex-col">
+      <nav className="flex-1 space-y-0.5 p-3" aria-label="Primary">
         {ITEMS.map((item) => {
           const active = item.match(pathname);
           const Icon = item.icon;
@@ -65,16 +66,16 @@ export function Sidebar(): JSX.Element {
               aria-current={active ? 'page' : undefined}
               className={cn(
                 'group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors duration-150',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                 active
-                  ? 'bg-blue-600/15 font-medium text-white'
-                  : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-100',
+                  ? 'bg-violet-50 font-medium text-violet-700'
+                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900',
               )}
             >
               <span
                 aria-hidden
                 className={cn(
-                  'absolute left-0 top-1/2 h-5 w-[2px] -translate-y-1/2 rounded-r-full bg-blue-400 transition-opacity duration-200',
+                  'absolute left-0 top-1/2 h-4 w-[2px] -translate-y-1/2 rounded-r-full bg-violet-600 transition-opacity duration-200',
                   active ? 'opacity-100' : 'opacity-0 group-hover:opacity-30',
                 )}
               />
@@ -82,8 +83,8 @@ export function Sidebar(): JSX.Element {
                 className={cn(
                   'h-4 w-4 transition-colors',
                   active
-                    ? 'text-blue-400'
-                    : 'text-slate-500 group-hover:text-slate-300',
+                    ? 'text-violet-600'
+                    : 'text-slate-400 group-hover:text-slate-500',
                 )}
                 aria-hidden
               />
@@ -94,22 +95,22 @@ export function Sidebar(): JSX.Element {
       </nav>
 
       {/* Enkrypt AI guard */}
-      <div className="m-3 mt-1 rounded-lg border border-slate-800 bg-slate-900/60 p-3.5">
-        <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
+      <div className="m-3 mt-1 rounded-xl border border-slate-200/80 bg-white p-3.5">
+        <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
           <span
-            className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-blue-500/20 text-blue-300"
+            className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-violet-50 text-violet-600"
             aria-hidden
           >
             <ShieldCheck className="h-3 w-3" />
           </span>
           Enkrypt AI
         </div>
-        <p className="mt-1.5 text-xs leading-relaxed text-slate-400">
+        <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
           Guarding every recommendation.
         </p>
       </div>
 
-      <div className="border-t border-slate-800 px-5 py-3 text-[11px] text-slate-500">
+      <div className="border-t border-slate-100 px-5 py-3 text-[11px] text-slate-400">
         v0.1.0 · Enterprise build
       </div>
     </aside>

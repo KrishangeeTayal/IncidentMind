@@ -23,10 +23,10 @@ interface KpiCardProps {
 
 const TONE_CLASSES: Record<Tone, { ring: string; icon: string; softBg: string; bar: string }> = {
   blue: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    softBg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    softBg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
   amber: {
     ring: 'ring-amber-100',
@@ -47,10 +47,10 @@ const TONE_CLASSES: Record<Tone, { ring: string; icon: string; softBg: string; b
     bar: 'bg-rose-500',
   },
   purple: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    softBg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    softBg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
   slate: {
     ring: 'ring-slate-100',

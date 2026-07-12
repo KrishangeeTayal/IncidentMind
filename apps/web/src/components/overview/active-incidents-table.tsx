@@ -50,17 +50,17 @@ const SERVICE_LABEL: Record<string, string> = {
 };
 
 const SERVICE_ICON_BG: Record<string, string> = {
-  payments: 'bg-blue-50 text-blue-600',
+  payments: 'bg-violet-50 text-violet-600',
   redis: 'bg-orange-50 text-orange-600',
-  database: 'bg-blue-50 text-blue-600',
+  database: 'bg-violet-50 text-violet-600',
   'api-gateway': 'bg-emerald-50 text-emerald-600',
   infrastructure: 'bg-amber-50 text-amber-600',
 };
 
 const AI_STATUSES = [
   { label: 'Investigation Complete', color: 'bg-emerald-500', text: 'text-emerald-700', bg: 'bg-emerald-50' },
-  { label: 'Analyzing',             color: 'bg-blue-500',    text: 'text-blue-700',    bg: 'bg-blue-50' },
-  { label: 'Collecting Data',        color: 'bg-blue-500',    text: 'text-blue-700',    bg: 'bg-blue-50' },
+  { label: 'Analyzing',             color: 'bg-violet-500',    text: 'text-violet-700',    bg: 'bg-violet-50' },
+  { label: 'Collecting Data',        color: 'bg-violet-500',    text: 'text-violet-700',    bg: 'bg-violet-50' },
   { label: 'Awaiting Context',       color: 'bg-slate-400',   text: 'text-slate-600',   bg: 'bg-slate-50' },
 ];
 

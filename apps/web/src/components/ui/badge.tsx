@@ -15,14 +15,14 @@ const badgeVariants = cva(
         // Status colors — subtle tinted pills
         success: 'bg-emerald-50 text-emerald-700',
         warning: 'bg-amber-50 text-amber-700',
-        info: 'bg-blue-50 text-blue-700',
+        info: 'bg-violet-50 text-violet-700',
         // Severity colors
         critical: 'bg-rose-50 text-rose-700',
         high: 'bg-orange-50 text-orange-700',
         medium: 'bg-amber-50 text-amber-700',
         low: 'bg-sky-50 text-sky-700',
         // AI
-        ai: 'bg-blue-50 text-blue-700',
+        ai: 'bg-violet-50 text-violet-700',
       },
     },
     defaultVariants: {

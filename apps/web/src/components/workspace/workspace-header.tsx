@@ -126,11 +126,11 @@ export function WorkspaceHeader({
       <div className="im-card p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-3">
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
               <Sparkles className="h-4 w-4" aria-hidden />
             </span>
             <div>
-              <p className="text-[11px] font-medium uppercase tracking-wider text-blue-700">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-violet-700">
                 AI Recommendation Ready
               </p>
               <p className="mt-0.5 text-base font-semibold text-slate-900">
@@ -158,7 +158,7 @@ export function WorkspaceHeader({
                 <Button
                   size="sm"
                   onClick={onApprove}
-                  className="rounded-md bg-blue-600 px-4 text-white transition-all hover:-translate-y-px hover:bg-blue-700"
+                  className="rounded-md bg-violet-600 px-4 text-white transition-all hover:-translate-y-px hover:bg-violet-700"
                 >
                   <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
                   Approve

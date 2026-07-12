@@ -42,7 +42,7 @@ export function OverviewHeader({
   return (
     <header className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-100 pb-5">
       <div className="space-y-1.5">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
           Mission Control
         </h1>
         <p className="text-sm text-slate-500">

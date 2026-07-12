@@ -22,7 +22,7 @@ export function PendingApprovals(): JSX.Element {
             the system will not deploy without your approval.
           </p>
         </div>
-        <span className="inline-flex items-center gap-1.5 rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-blue-700">
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-violet-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
           <ShieldCheck className="h-3 w-3" aria-hidden />
           Human-in-the-loop
         </span>

@@ -66,7 +66,7 @@ export function IncidentCard({ incident, aiConfidence }: IncidentCardProps): JSX
   return (
     <Link
       href={`/incidents/${incident.id}` as Parameters<typeof Link>[0]['href']}
-      className="group relative block overflow-hidden rounded-xl border bg-card transition-all duration-200 hover:-translate-y-px hover:border-blue-200 hover:shadow-md"
+      className="group relative block overflow-hidden rounded-xl border bg-card transition-all duration-200 hover:-translate-y-px hover:border-violet-200 hover:shadow-md"
     >
       {/* Severity left border */}
       <span
@@ -94,7 +94,7 @@ export function IncidentCard({ incident, aiConfidence }: IncidentCardProps): JSX
               {status.label}
             </span>
             {typeof aiConfidence === 'number' ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700 ring-1 ring-blue-200">
+              <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-1.5 py-0.5 text-[10px] font-medium text-violet-700 ring-1 ring-violet-200">
                 <Sparkles className="h-2.5 w-2.5" aria-hidden />
                 AI {aiConfidence}%
               </span>
@@ -119,7 +119,7 @@ export function IncidentCard({ incident, aiConfidence }: IncidentCardProps): JSX
         </div>
 
         <ArrowUpRight
-          className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-blue-600"
+          className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-600"
           aria-hidden
         />
       </div>

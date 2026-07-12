@@ -55,7 +55,7 @@ export function IncidentPatternModal({
           <div className="space-y-1">
             <p className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-wider text-slate-500">
               {rank != null ? (
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-blue-50 text-[10px] font-bold text-blue-600">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-violet-50 text-[10px] font-bold text-violet-600">
                   #{rank}
                 </span>
               ) : null}
@@ -106,7 +106,7 @@ export function IncidentPatternModal({
 
           <section className="rounded-xl border border-slate-200/80 bg-white p-4">
             <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-700">
-              <BookOpen className="h-3.5 w-3.5 text-blue-500" aria-hidden />
+              <BookOpen className="h-3.5 w-3.5 text-violet-500" aria-hidden />
               Recommended Playbook
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">

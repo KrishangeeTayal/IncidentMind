@@ -68,7 +68,7 @@ export function RecommendationSection({
       >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-blue-700">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-violet-700">
               Recommended action
             </p>
             <h3 className="mt-1 text-xl font-semibold leading-snug tracking-tight text-slate-900">
@@ -106,7 +106,7 @@ export function RecommendationSection({
                 key={i}
                 className="flex items-start gap-2 text-xs leading-relaxed text-slate-700"
               >
-                <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-blue-50 font-mono text-[9px] font-semibold text-blue-700">
+                <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-50 font-mono text-[9px] font-semibold text-violet-700">
                   {i + 1}
                 </span>
                 {s}
@@ -125,7 +125,7 @@ export function RecommendationSection({
               <button
                 type="button"
                 onClick={onApprove}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:-translate-y-px hover:bg-blue-700"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:-translate-y-px hover:bg-violet-700"
               >
                 <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
                 Approve

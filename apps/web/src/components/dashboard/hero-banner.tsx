@@ -46,7 +46,7 @@ export function HeroBanner({
   return (
     <section
       className={cn(
-        'relative overflow-hidden rounded-2xl border border-blue-100/80 bg-white shadow-sm',
+        'relative overflow-hidden rounded-2xl border border-violet-100/80 bg-white shadow-sm',
         className,
       )}
     >
@@ -62,7 +62,7 @@ export function HeroBanner({
       {/* Decorative orbs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-blue-200/30 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-violet-200/30 blur-3xl"
       />
       <div
         aria-hidden
@@ -72,7 +72,7 @@ export function HeroBanner({
       <div className="relative z-10 flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-blue-700 backdrop-blur">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-white/70 px-2.5 py-1 text-[11px] font-medium text-violet-700 backdrop-blur">
               <Sparkles className="h-3 w-3" aria-hidden />
               AI Operations Center
             </span>
@@ -144,9 +144,9 @@ interface StatusTileProps {
 }
 
 const TILE_TONE: Record<StatusTileProps['tone'], { ring: string; icon: string; bg: string }> = {
-  blue: { ring: 'ring-blue-100', icon: 'text-blue-600', bg: 'bg-blue-50' },
+  blue: { ring: 'ring-violet-100', icon: 'text-violet-600', bg: 'bg-violet-50' },
   emerald: { ring: 'ring-emerald-100', icon: 'text-emerald-600', bg: 'bg-emerald-50' },
-  purple: { ring: 'ring-blue-100', icon: 'text-blue-600', bg: 'bg-blue-50' },
+  purple: { ring: 'ring-violet-100', icon: 'text-violet-600', bg: 'bg-violet-50' },
   slate: { ring: 'ring-slate-100', icon: 'text-slate-600', bg: 'bg-slate-50' },
 };
 

@@ -41,7 +41,7 @@ export default async function SettingsPage(): Promise<JSX.Element> {
   return (
     <AppShell>
       <header className="mb-6 flex flex-col gap-1">
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
         <p className="text-sm text-muted-foreground">
           Project information, technology stack, and system health.
         </p>

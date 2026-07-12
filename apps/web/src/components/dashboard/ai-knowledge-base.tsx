@@ -62,10 +62,10 @@ type Key = (typeof ITEMS)[number]['key'];
 
 const ACCENT: Record<Key, { ring: string; icon: string; bg: string; bar: string }> = {
   similarIncidents: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    bg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    bg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
   runbooks: {
     ring: 'ring-indigo-100',
@@ -74,22 +74,22 @@ const ACCENT: Record<Key, { ring: string; icon: string; bg: string; bar: string 
     bar: 'bg-indigo-500',
   },
   sops: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    bg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    bg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
   semanticMatches: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    bg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    bg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
   postmortems: {
-    ring: 'ring-blue-100',
-    icon: 'text-blue-600',
-    bg: 'bg-blue-50',
-    bar: 'bg-blue-500',
+    ring: 'ring-violet-100',
+    icon: 'text-violet-600',
+    bg: 'bg-violet-50',
+    bar: 'bg-violet-500',
   },
 };
 
@@ -101,15 +101,15 @@ export function AIKnowledgeBase({ stats }: AIKnowledgeBaseProps): JSX.Element {
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
             <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-blue-600" aria-hidden />
+              <AlertTriangle className="h-4 w-4 text-violet-600" aria-hidden />
               AI Knowledge Base
             </CardTitle>
             <p className="text-xs text-muted-foreground">
               Context retrieved by the Context Retrieval Agent from Qdrant.
             </p>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-medium text-blue-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 px-2.5 py-1 text-[11px] font-medium text-violet-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
             {total} entries
           </span>
         </div>

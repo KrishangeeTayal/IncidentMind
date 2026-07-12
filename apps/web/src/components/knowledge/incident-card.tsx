@@ -33,9 +33,9 @@ const SERVICE_LABEL: Record<ServiceFilter['id'], string> = {
 };
 
 const SERVICE_DOT: Record<ServiceFilter['id'], string> = {
-  payments: 'bg-blue-500',
+  payments: 'bg-violet-500',
   redis: 'bg-rose-500',
-  database: 'bg-blue-500',
+  database: 'bg-violet-500',
   'api-gateway': 'bg-emerald-500',
   infrastructure: 'bg-amber-500',
 };
@@ -46,13 +46,13 @@ const STATUS_TONE: Record<KnowledgeIncident['status'], {
   dot: string;
 }> = {
   resolved:   { text: 'text-emerald-700', bg: 'bg-emerald-50', dot: 'bg-emerald-500' },
-  monitoring: { text: 'text-blue-700',    bg: 'bg-blue-50',    dot: 'bg-blue-500' },
+  monitoring: { text: 'text-violet-700',    bg: 'bg-violet-50',    dot: 'bg-violet-500' },
   open:       { text: 'text-amber-700',   bg: 'bg-amber-50',   dot: 'bg-amber-500' },
 };
 
 function similarityTone(score: number): string {
-  if (score >= 90) return 'bg-blue-50 text-blue-700 border-blue-200';
-  if (score >= 80) return 'bg-blue-50 text-blue-700 border-blue-200';
+  if (score >= 90) return 'bg-violet-50 text-violet-700 border-violet-200';
+  if (score >= 80) return 'bg-violet-50 text-violet-700 border-violet-200';
   return 'bg-slate-50 text-slate-700 border-slate-200';
 }
 
@@ -70,7 +70,7 @@ export function IncidentCard({
         'group relative flex h-full flex-col gap-3 rounded-xl border bg-white p-4',
         'transition-all duration-200',
         isActive
-          ? 'border-blue-300 ring-2'
+          ? 'border-violet-300 ring-2'
           : 'border-slate-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md',
       )}
     >
@@ -154,8 +154,8 @@ export function IncidentCard({
           className={cn(
             'inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-colors',
             isActive
-              ? 'bg-blue-600 text-white'
-              : 'bg-slate-50 text-slate-700 hover:bg-blue-50 hover:text-blue-700',
+              ? 'bg-violet-600 text-white'
+              : 'bg-slate-50 text-slate-700 hover:bg-violet-50 hover:text-violet-700',
           )}
         >
           <Eye className="h-3 w-3" aria-hidden />

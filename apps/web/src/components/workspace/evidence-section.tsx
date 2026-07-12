@@ -111,7 +111,7 @@ export function EvidenceSection({ evidence }: EvidenceSectionProps): JSX.Element
               className={cn(
                 'flex items-center gap-1.5 border-b-2 px-4 py-2.5 text-xs font-medium transition-colors',
                 tab === t.id
-                  ? 'border-blue-600 text-blue-700'
+                  ? 'border-violet-600 text-violet-700'
                   : 'border-transparent text-slate-500 hover:text-slate-900',
               )}
             >

@@ -27,7 +27,7 @@ export function WorkspacePageClient({
   const activeStep = incident.timeline.find((s) => s.state === 'active')?.id;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <WorkspaceHeader
         incident={incident}
         approval={approval}

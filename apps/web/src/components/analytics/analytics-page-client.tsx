@@ -23,7 +23,7 @@ export function AnalyticsPageClient(): JSX.Element {
   const [showAI, setShowAI] = useState(true);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <AnalyticsHeader range={range} onRangeChange={setRange} />
 
       <AnalyticsKpis kpis={snapshot.kpis} rangeKey={range} />

@@ -41,30 +41,30 @@ const SEVERITY_DOT: Record<SeverityFilter['id'], string> = {
 };
 
 const SERVICE_TONE: Record<ServiceFilter['id'], string> = {
-  payments:       'data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 data-[active=true]:border-blue-200 data-[active=true]:ring-blue-100',
+  payments:       'data-[active=true]:bg-violet-50 data-[active=true]:text-violet-700 data-[active=true]:border-violet-200 data-[active=true]:ring-violet-100',
   redis:          'data-[active=true]:bg-rose-50 data-[active=true]:text-rose-700 data-[active=true]:border-rose-200 data-[active=true]:ring-rose-100',
-  database:       'data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 data-[active=true]:border-blue-200 data-[active=true]:ring-blue-100',
+  database:       'data-[active=true]:bg-violet-50 data-[active=true]:text-violet-700 data-[active=true]:border-violet-200 data-[active=true]:ring-violet-100',
   'api-gateway':  'data-[active=true]:bg-emerald-50 data-[active=true]:text-emerald-700 data-[active=true]:border-emerald-200 data-[active=true]:ring-emerald-100',
   infrastructure: 'data-[active=true]:bg-amber-50 data-[active=true]:text-amber-700 data-[active=true]:border-amber-200 data-[active=true]:ring-amber-100',
 };
 
 const SERVICE_DOT: Record<ServiceFilter['id'], string> = {
-  payments: 'bg-blue-500',
+  payments: 'bg-violet-500',
   redis: 'bg-rose-500',
-  database: 'bg-blue-500',
+  database: 'bg-violet-500',
   'api-gateway': 'bg-emerald-500',
   infrastructure: 'bg-amber-500',
 };
 
 const STATUS_TONE: Record<StatusFilter['id'], string> = {
   resolved:   'data-[active=true]:bg-emerald-50 data-[active=true]:text-emerald-700 data-[active=true]:border-emerald-200 data-[active=true]:ring-emerald-100',
-  monitoring: 'data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 data-[active=true]:border-blue-200 data-[active=true]:ring-blue-100',
+  monitoring: 'data-[active=true]:bg-violet-50 data-[active=true]:text-violet-700 data-[active=true]:border-violet-200 data-[active=true]:ring-violet-100',
   open:       'data-[active=true]:bg-amber-50 data-[active=true]:text-amber-700 data-[active=true]:border-amber-200 data-[active=true]:ring-amber-100',
 };
 
 const STATUS_DOT: Record<StatusFilter['id'], string> = {
   resolved: 'bg-emerald-500',
-  monitoring: 'bg-blue-500',
+  monitoring: 'bg-violet-500',
   open: 'bg-amber-500',
 };
 
@@ -93,7 +93,7 @@ function Chip({
       className={cn(
         'inline-flex h-7 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-2.5 text-xs font-medium text-slate-600',
         'transition-all hover:border-slate-300 hover:text-slate-900',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300',
         'ring-1 ring-transparent',
         tone,
       )}
@@ -169,7 +169,7 @@ export function FilterChips({
           <button
             type="button"
             onClick={onClear}
-            className="text-[11px] font-medium text-blue-600 hover:text-blue-700"
+            className="text-[11px] font-medium text-violet-600 hover:text-violet-700"
           >
             Clear filters
           </button>

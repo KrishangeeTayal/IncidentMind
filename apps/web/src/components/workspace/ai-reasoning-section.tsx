@@ -53,17 +53,17 @@ export function AIReasoningSection({
           </ul>
         </div>
 
-        <div className="rounded-xl border border-blue-200 bg-blue-50/40 p-4">
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-blue-700">
+        <div className="rounded-xl border border-violet-200 bg-violet-50/40 p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-violet-700">
             Confidence
           </p>
           <div className="mt-1.5 flex items-center gap-3">
             <span className="font-mono text-3xl font-semibold tabular-nums text-slate-900">
               {reasoning.confidence}%
             </span>
-            <div className="h-2 flex-1 overflow-hidden rounded-full bg-blue-100">
+            <div className="h-2 flex-1 overflow-hidden rounded-full bg-violet-100">
               <div
-                className="h-full bg-blue-500 progress-fill"
+                className="h-full bg-violet-500 progress-fill"
                 style={{ width: `${reasoning.confidence}%` }}
               />
             </div>

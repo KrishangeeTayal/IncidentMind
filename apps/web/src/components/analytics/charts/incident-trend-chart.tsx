@@ -123,7 +123,7 @@ export function IncidentTrendChart({
     {
       id: 'total',
       label: 'Total incidents',
-      color: 'bg-blue-600',
+      color: 'bg-violet-600',
       value: hover ? String(hover.total) : undefined,
       active: showTotal,
       onToggle: onToggleTotal,
@@ -131,7 +131,7 @@ export function IncidentTrendChart({
     {
       id: 'ai',
       label: 'AI-handled',
-      color: 'bg-blue-500',
+      color: 'bg-violet-500',
       value: hover ? String(hover.ai) : undefined,
       active: showAI,
       onToggle: onToggleAI,
@@ -294,10 +294,10 @@ export function IncidentTrendChart({
               title={hover.label}
               rows={[
                 showTotal
-                  ? { label: 'Total', value: String(hover.total), color: 'bg-blue-600' }
+                  ? { label: 'Total', value: String(hover.total), color: 'bg-violet-600' }
                   : null,
                 showAI
-                  ? { label: 'AI-handled', value: String(hover.ai), color: 'bg-blue-500' }
+                  ? { label: 'AI-handled', value: String(hover.ai), color: 'bg-violet-500' }
                   : null,
               ].filter((r): r is NonNullable<typeof r> => r != null)}
             />

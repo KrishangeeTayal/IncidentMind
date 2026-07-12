@@ -118,7 +118,7 @@ export function ApprovalQueueSummary(): JSX.Element {
       <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
         <SummaryMetric
           icon={ListChecks}
-          iconTone="bg-blue-50 text-blue-600"
+          iconTone="bg-violet-50 text-violet-600"
           label="Pending Approvals"
           value={String(summary.pendingCount)}
           subtext="Awaiting review"
@@ -149,7 +149,7 @@ export function ApprovalQueueSummary(): JSX.Element {
         />
         <SummaryMetric
           icon={Sparkles}
-          iconTone="bg-blue-50 text-blue-600"
+          iconTone="bg-violet-50 text-violet-600"
           label="Average AI Confidence"
           value={`${summary.averageConfidence}%`}
           subtext={confidenceSubtext}

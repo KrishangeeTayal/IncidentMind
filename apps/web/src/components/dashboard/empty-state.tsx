@@ -28,14 +28,14 @@ export function EmptyState({
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-200/20 blur-3xl"
+        className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-200/20 blur-3xl"
       />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         <div className="flex h-14 w-14 items-center justify-center rounded-2xl ai-gradient shadow-lg">
           <Sparkles className="h-6 w-6 text-white" aria-hidden />
         </div>
-        <h2 className="mt-5 text-3xl font-bold tracking-tight">
+        <h2 className="mt-5 text-2xl font-semibold tracking-tight">
           All systems operational
         </h2>
         <p className="mt-2 max-w-xl text-sm text-muted-foreground">

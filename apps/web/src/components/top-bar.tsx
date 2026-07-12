@@ -29,8 +29,8 @@ export function TopBar(): JSX.Element {
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="flex h-full items-center justify-between px-5 md:px-8">
+    <header className="sticky top-0 z-30 h-16 border-b border-slate-100 bg-white/90 backdrop-blur">
+      <div className="flex h-full items-center justify-between px-4 md:px-6">
         {/* Brand */}
         <div className="flex items-center gap-2.5">
           <button
@@ -42,7 +42,7 @@ export function TopBar(): JSX.Element {
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900">
             <Activity className="h-4.5 w-4.5 text-white" aria-hidden />
           </div>
           <div className="flex flex-col leading-tight">

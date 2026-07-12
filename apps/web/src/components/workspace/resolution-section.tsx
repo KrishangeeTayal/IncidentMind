@@ -140,7 +140,7 @@ export function ResolutionSection({ approval }: ResolutionSectionProps): JSX.Ele
                   className={cn(
                     'relative flex items-start gap-3 rounded-xl border px-4 py-3 transition-all duration-300',
                     idx > 0 && 'mt-2',
-                    isActive && 'border-blue-200 bg-blue-50/40 shadow-sm',
+                    isActive && 'border-violet-200 bg-violet-50/40 shadow-sm',
                     isDone && 'border-emerald-100 bg-emerald-50/20',
                     isPending && 'border-slate-200 bg-white',
                   )}
@@ -151,8 +151,8 @@ export function ResolutionSection({ approval }: ResolutionSectionProps): JSX.Ele
                         <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
                       </span>
                     ) : isActive ? (
-                      <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-                        <span className="absolute inset-0 animate-ping rounded-full bg-blue-400 opacity-30" />
+                      <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-violet-50 text-violet-600">
+                        <span className="absolute inset-0 animate-ping rounded-full bg-violet-400 opacity-30" />
                         <Icon
                           className={cn(
                             'relative h-3.5 w-3.5',
@@ -171,7 +171,7 @@ export function ResolutionSection({ approval }: ResolutionSectionProps): JSX.Ele
                         aria-hidden
                         className={cn(
                           'mt-1 h-3 w-px',
-                          isDone ? 'bg-slate-200' : isActive ? 'bg-blue-200' : 'bg-slate-200',
+                          isDone ? 'bg-slate-200' : isActive ? 'bg-violet-200' : 'bg-slate-200',
                         )}
                       />
                     ) : null}
@@ -180,7 +180,7 @@ export function ResolutionSection({ approval }: ResolutionSectionProps): JSX.Ele
                     <p
                       className={cn(
                         'text-sm font-semibold tracking-tight',
-                        isActive ? 'text-blue-700' : isDone ? 'text-emerald-700' : 'text-slate-400',
+                        isActive ? 'text-violet-700' : isDone ? 'text-emerald-700' : 'text-slate-400',
                       )}
                     >
                       {meta.label}

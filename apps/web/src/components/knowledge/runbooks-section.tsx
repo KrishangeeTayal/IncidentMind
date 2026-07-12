@@ -28,7 +28,7 @@ export function RunbooksSection({
             Playbooks distilled from every historical incident. Open one to see the steps.
           </p>
         </div>
-        <span className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700">
+        <span className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">
           <Sparkles className="h-2.5 w-2.5" aria-hidden />
           Auto-updated
         </span>

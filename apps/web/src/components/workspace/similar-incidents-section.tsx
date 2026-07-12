@@ -41,7 +41,7 @@ export function SimilarIncidentsSection({
                 onClick={() => setOpenId(inc.id)}
                 className={cn(
                   'group flex h-full w-full flex-col im-card p-4 text-left transition-all duration-200',
-                  'hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md',
+                  'hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md',
                 )}
               >
                 <div className="flex items-center justify-between">
@@ -61,7 +61,7 @@ export function SimilarIncidentsSection({
                     <Clock className="h-3 w-3" aria-hidden />
                     {inc.resolutionTimeMinutes} min to resolve
                   </span>
-                  <span className="inline-flex items-center gap-1 font-medium text-blue-700 opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="inline-flex items-center gap-1 font-medium text-violet-700 opacity-0 transition-opacity group-hover:opacity-100">
                     <Gauge className="h-3 w-3" aria-hidden />
                     Open
                   </span>
@@ -81,9 +81,9 @@ function SimilarityBadge({ value }: { value: number }): JSX.Element {
   // Color band: 90+ blue, 80-90 violet, <80 slate
   const tone =
     value >= 90
-      ? 'bg-blue-50 text-blue-700'
+      ? 'bg-violet-50 text-violet-700'
       : value >= 80
-      ? 'bg-blue-50 text-blue-700'
+      ? 'bg-violet-50 text-violet-700'
       : 'bg-slate-100 text-slate-600';
   return (
     <span

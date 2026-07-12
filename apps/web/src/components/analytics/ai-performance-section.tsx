@@ -78,7 +78,7 @@ function buildCards(p: AIPerf): MetricConfig[] {
 }
 
 const TONE: Record<MetricConfig['tone'], { tint: string; text: string }> = {
-  info:     { tint: 'bg-blue-50',    text: 'text-blue-600' },
+  info:     { tint: 'bg-violet-50',    text: 'text-violet-600' },
   success:  { tint: 'bg-emerald-50', text: 'text-emerald-600' },
   warning:  { tint: 'bg-amber-50',   text: 'text-amber-600' },
   critical: { tint: 'bg-rose-50',    text: 'text-rose-600' },
@@ -99,7 +99,7 @@ export function AIPerformanceSection({
       <div className="mb-4 flex items-center justify-between">
         <div>
           <h2 className="flex items-center gap-2 text-sm font-semibold text-slate-900">
-            <Sparkles className="h-4 w-4 text-blue-600" aria-hidden />
+            <Sparkles className="h-4 w-4 text-violet-600" aria-hidden />
             AI Performance
           </h2>
           <p className="mt-0.5 text-xs text-slate-500">

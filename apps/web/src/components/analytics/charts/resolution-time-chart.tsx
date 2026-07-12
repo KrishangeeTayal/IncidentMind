@@ -72,7 +72,7 @@ export function ResolutionTimeChart({ data }: ResolutionTimeChartProps): JSX.Ele
     {
       id: 'ai',
       label: 'AI-assisted',
-      color: 'bg-blue-500',
+      color: 'bg-violet-500',
       active: showAI,
       onToggle: () => setShowAI((v: boolean) => !v),
     },
@@ -255,7 +255,7 @@ export function ResolutionTimeChart({ data }: ResolutionTimeChartProps): JSX.Ele
                       ? {
                           label: 'AI-assisted',
                           value: `${g.aiAssistedMinutes} min`,
-                          color: 'bg-blue-500',
+                          color: 'bg-violet-500',
                         }
                       : null,
                     showManual
@@ -279,9 +279,9 @@ export function ResolutionTimeChart({ data }: ResolutionTimeChartProps): JSX.Ele
         ) : null}
       </div>
 
-      <div className="mt-4 flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50/50 p-3">
-        <Sparkles className="h-3.5 w-3.5 text-blue-600" aria-hidden />
-        <p className="text-xs text-blue-700">
+      <div className="mt-4 flex items-center gap-2 rounded-lg border border-violet-100 bg-violet-50/50 p-3">
+        <Sparkles className="h-3.5 w-3.5 text-violet-600" aria-hidden />
+        <p className="text-xs text-violet-700">
           AI-assisted resolution is consistently faster across every severity level.
         </p>
       </div>

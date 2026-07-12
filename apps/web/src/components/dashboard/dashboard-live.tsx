@@ -177,7 +177,7 @@ export function DashboardLive({
       {/* KPI grid */}
       <section
         aria-label="Key metrics"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
       >
         <KpiCard
           label="Active incidents"
@@ -219,7 +219,7 @@ export function DashboardLive({
       </section>
 
       {/* AI Copilot + Severity distribution */}
-      <section className="grid gap-6 xl:grid-cols-3">
+      <section className="grid gap-4 xl:grid-cols-3">
         <div className="xl:col-span-2">
           <AiCopilotPanel
             phase={activeScenario.phase}
@@ -262,7 +262,7 @@ export function DashboardLive({
           isDemoRunning={demo.running}
         />
       ) : (
-        <section className="grid gap-6 xl:grid-cols-3">
+        <section className="grid gap-4 xl:grid-cols-3">
           <div className="xl:col-span-2">
             <LiveIncidentFeed
               incidents={merged}
@@ -299,7 +299,7 @@ export function DashboardLive({
             'sticky bottom-4 z-10 mx-auto flex max-w-md items-center gap-3 rounded-full border bg-white/90 px-4 py-2 shadow-md backdrop-blur',
           )}
         >
-          <span className="flex h-2 w-2 animate-pulse rounded-full bg-blue-500" />
+          <span className="flex h-2 w-2 animate-pulse rounded-full bg-violet-500" />
           <p className="flex-1 text-xs text-muted-foreground">
             Demo running · {labelFor(demo.phase)}
           </p>

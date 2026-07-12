@@ -72,10 +72,10 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
         {confidence !== null ? (
           <>
             <span className="text-slate-300">·</span>
-            <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-violet-700">
               <span
                 aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-blue-500"
+                className="h-1.5 w-1.5 rounded-full bg-violet-500"
               />
               {confidence}% AI confidence
             </span>
@@ -111,9 +111,9 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
 
       {/* Actions */}
       <footer className="flex items-center justify-end gap-2 pl-1.5 pt-1">
-        {true ? (
+        {decision === 'pending' ? (
           <>
-           <Link
+          <Link
             href={`/incidents/${approval.incidentId}`}
             className="mr-auto inline-flex h-8 items-center justify-center rounded-md border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50"
           >
@@ -130,7 +130,7 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
             <button
               type="button"
               onClick={() => setDecision('approved')}
-              className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-blue-600 px-3 text-xs font-semibold text-white transition-all hover:-translate-y-px hover:bg-blue-700 active:translate-y-0"
+              className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md bg-violet-600 px-3 text-xs font-semibold text-white transition-all hover:-translate-y-px hover:bg-violet-700 active:translate-y-0"
             >
               <Check className="h-3.5 w-3.5" aria-hidden />
               Approve

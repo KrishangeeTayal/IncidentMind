@@ -19,16 +19,16 @@ const SERVICE_LABEL: Record<ServiceFilter['id'], string> = {
 };
 
 const SERVICE_DOT: Record<ServiceFilter['id'], string> = {
-  payments: 'bg-blue-500',
+  payments: 'bg-violet-500',
   redis: 'bg-rose-500',
-  database: 'bg-blue-500',
+  database: 'bg-violet-500',
   'api-gateway': 'bg-emerald-500',
   infrastructure: 'bg-amber-500',
 };
 
 function successTone(rate: number): string {
   if (rate >= 90) return 'text-emerald-700';
-  if (rate >= 80) return 'text-blue-700';
+  if (rate >= 80) return 'text-violet-700';
   return 'text-amber-700';
 }
 
@@ -38,7 +38,7 @@ export function RunbookCard({ runbook, isOpen, onToggle }: RunbookCardProps): JS
       className={cn(
         'overflow-hidden rounded-2xl border bg-white',
         isOpen
-          ? 'border-blue-200 shadow-sm'
+          ? 'border-violet-200 shadow-sm'
           : 'border-slate-200 shadow-sm',
         'transition-all',
       )}
@@ -86,7 +86,7 @@ export function RunbookCard({ runbook, isOpen, onToggle }: RunbookCardProps): JS
             className={cn(
               'inline-flex h-8 items-center gap-1.5 rounded-lg px-3 text-xs font-medium transition-colors',
               isOpen
-                ? 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+                ? 'bg-violet-100 text-violet-700 hover:bg-violet-200'
                 : 'bg-slate-900 text-white hover:bg-slate-800',
             )}
           >
@@ -104,7 +104,7 @@ export function RunbookCard({ runbook, isOpen, onToggle }: RunbookCardProps): JS
       </header>
 
       {isOpen ? (
-        <div className="space-y-3 border-t border-blue-100 bg-blue-50/30 p-4">
+        <div className="space-y-3 border-t border-violet-100 bg-violet-50/30 p-4">
           <div>
             <h4 className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-700">
               <ListChecks className="h-3 w-3" aria-hidden />
@@ -118,7 +118,7 @@ export function RunbookCard({ runbook, isOpen, onToggle }: RunbookCardProps): JS
                 >
                   <span
                     aria-hidden
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500"
                   />
                   {t}
                 </li>
@@ -139,7 +139,7 @@ export function RunbookCard({ runbook, isOpen, onToggle }: RunbookCardProps): JS
                   <span
                     className={cn(
                       'mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md font-mono text-[10px] font-semibold',
-                      'bg-blue-100 text-blue-700',
+                      'bg-violet-100 text-violet-700',
                     )}
                   >
                     {i + 1}

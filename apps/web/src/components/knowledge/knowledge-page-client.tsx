@@ -54,7 +54,7 @@ export function KnowledgePageClient(): JSX.Element {
     : null;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <KnowledgeHeader />
 
       <KnowledgeKpis />

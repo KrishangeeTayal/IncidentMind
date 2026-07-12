@@ -27,7 +27,7 @@ export function SemanticSearch({ value, onChange }: SemanticSearchProps): JSX.El
           className={cn(
             'h-11 w-full rounded-xl border border-slate-200/80 bg-white pl-10 pr-10 text-sm text-slate-900 placeholder:text-slate-400',
             'transition-all',
-            'focus-visible:border-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-200',
+            'focus-visible:border-violet-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200',
           )}
         />
         {value.length > 0 ? (

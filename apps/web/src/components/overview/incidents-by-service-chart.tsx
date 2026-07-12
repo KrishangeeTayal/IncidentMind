@@ -23,7 +23,7 @@ const SEGMENTS: Segment[] = [
   { label: 'Payment Service', value: 30, color: '#DC2626' }, // rose-600
   { label: 'User Service',    value: 25, color: '#EA580C' }, // orange-600
   { label: 'Order Service',   value: 20, color: '#D97706' }, // amber-600
-  { label: 'Inventory Service', value: 15, color: '#2563EB' }, // blue-600
+  { label: 'Inventory Service', value: 15, color: '#2563EB' }, // violet-600
   { label: 'Other Services',  value: 10, color: '#CBD5E1' }, // slate-300
 ];
 

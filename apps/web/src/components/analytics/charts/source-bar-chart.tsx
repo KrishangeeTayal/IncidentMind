@@ -19,8 +19,8 @@ const SOURCE_META: Record<string, {
   tint: string;  // tailwind bg class for the icon container
   tintText: string;
 }> = {
-  API:            { icon: Globe,    color: 'bg-blue-500',    text: 'text-blue-700',    tint: 'bg-blue-50',    tintText: 'text-blue-600' },
-  Database:       { icon: Database, color: 'bg-blue-500',  text: 'text-blue-700',  tint: 'bg-blue-50',  tintText: 'text-blue-600' },
+  API:            { icon: Globe,    color: 'bg-violet-500',    text: 'text-violet-700',    tint: 'bg-violet-50',    tintText: 'text-violet-600' },
+  Database:       { icon: Database, color: 'bg-violet-500',  text: 'text-violet-700',  tint: 'bg-violet-50',  tintText: 'text-violet-600' },
   Cache:          { icon: Layers,   color: 'bg-emerald-500', text: 'text-emerald-700', tint: 'bg-emerald-50', tintText: 'text-emerald-600' },
   Infrastructure: { icon: Server,   color: 'bg-amber-500',   text: 'text-amber-700',   tint: 'bg-amber-50',   tintText: 'text-amber-600' },
   Network:        { icon: Network,  color: 'bg-slate-500',   text: 'text-slate-700',   tint: 'bg-slate-100',  tintText: 'text-slate-600' },

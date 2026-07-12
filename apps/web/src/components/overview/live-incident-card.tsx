@@ -118,7 +118,7 @@ export function LiveIncidentCard({
             {st.label}
           </span>
           {aiConfidence !== null ? (
-            <span className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-1.5 py-0.5 text-[10px] font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-1 rounded-md bg-violet-50 px-1.5 py-0.5 text-[10px] font-semibold text-violet-700">
               <Sparkles className="h-2.5 w-2.5" aria-hidden />
               AI {aiConfidence}%
             </span>

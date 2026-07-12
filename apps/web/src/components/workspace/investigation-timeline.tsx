@@ -75,7 +75,7 @@ export function InvestigationTimeline({
               className={cn(
                 'group rounded-xl border transition-all duration-200',
                 isActive
-                  ? 'border-blue-200 bg-blue-50/30 shadow-sm'
+                  ? 'border-violet-200 bg-violet-50/30 shadow-sm'
                   : 'border-transparent hover:border-slate-200 hover:bg-slate-50/40',
                 idx > 0 && 'mt-2',
               )}
@@ -103,8 +103,8 @@ export function InvestigationTimeline({
                       </span>
                     ) : null}
                     {isActive ? (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-blue-700">
-                        <span className="h-1 w-1 rounded-full bg-blue-500" />
+                      <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-violet-700">
+                        <span className="h-1 w-1 rounded-full bg-violet-500" />
                         Active
                       </span>
                     ) : null}
@@ -139,7 +139,7 @@ export function InvestigationTimeline({
                         <span
                           className={cn(
                             'mt-1.5 h-1 w-1 shrink-0 rounded-full',
-                            isActive ? 'bg-blue-500' : 'bg-slate-400',
+                            isActive ? 'bg-violet-500' : 'bg-slate-400',
                           )}
                         />
                         {d}
@@ -166,8 +166,8 @@ function StepMarker({ state }: { state: TimelineStepState }): JSX.Element {
   }
   if (state === 'active') {
     return (
-      <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-        <span className="absolute inset-0 animate-ping rounded-full bg-blue-400 opacity-30" />
+      <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-50 text-violet-600">
+        <span className="absolute inset-0 animate-ping rounded-full bg-violet-400 opacity-30" />
         <Sparkles className="relative h-3.5 w-3.5" aria-hidden />
       </span>
     );

@@ -114,7 +114,7 @@ function DrawerBody({
             </span>
             <span
               className={cn(
-                'inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-blue-700',
+                'inline-flex items-center gap-1 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-violet-700',
               )}
             >
               <Sparkles className="h-2.5 w-2.5" aria-hidden />
@@ -188,9 +188,9 @@ function DrawerBody({
         <Section
           icon={Brain}
           title="AI Recommendation"
-          accent="blue"
+          accent="violet"
           trailing={
-            <span className="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-1 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-violet-700">
               {incident.confidence}% confidence
             </span>
           }
@@ -242,7 +242,7 @@ function DrawerBody({
           </ol>
         </Section>
 
-        <Section icon={BookOpen} title="Generated Runbook" accent="blue">
+        <Section icon={BookOpen} title="Generated Runbook" accent="violet">
           <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-slate-100 bg-slate-50/60 p-3 font-mono text-[11px] leading-relaxed text-slate-700">
             {incident.generatedRunbook}
           </pre>
@@ -251,7 +251,7 @@ function DrawerBody({
         <Section
           icon={ShieldCheck}
           title="Preventive Action"
-          accent="blue"
+          accent="violet"
         >
           <p className="text-sm leading-relaxed text-slate-600">
             {incident.preventiveAction}
@@ -289,10 +289,10 @@ function Section({
 }: SectionProps): JSX.Element {
   const iconTone = (() => {
     switch (accent) {
-      case 'violet':  return 'bg-blue-50 text-blue-600';
+      case 'violet':  return 'bg-violet-50 text-violet-600';
       case 'emerald': return 'bg-emerald-50 text-emerald-600';
       case 'amber':   return 'bg-amber-50 text-amber-600';
-      case 'blue':    return 'bg-blue-50 text-blue-600';
+      case 'blue':    return 'bg-violet-50 text-violet-600';
       default:        return 'bg-slate-50 text-slate-600';
     }
   })();

@@ -45,8 +45,8 @@ export function SimilarIncidentModal({
       >
         <header className="flex items-start justify-between gap-3 border-b border-slate-100 p-5">
           <div className="space-y-1">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-blue-700">
-              <span className="h-1 w-1 rounded-full bg-blue-500" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-violet-700">
+              <span className="h-1 w-1 rounded-full bg-violet-500" />
               Similar incident
             </span>
             <h3

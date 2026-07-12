@@ -14,7 +14,7 @@ const RANK_TONE: Record<number, string> = {
   1: 'bg-rose-50 text-rose-600',
   2: 'bg-orange-50 text-orange-600',
   3: 'bg-amber-50 text-amber-600',
-  4: 'bg-blue-50 text-blue-600',
+  4: 'bg-violet-50 text-violet-600',
   5: 'bg-slate-50 text-slate-600',
 };
 
@@ -32,8 +32,8 @@ export function IncidentPatternCard({
       className={cn(
         'group flex h-full w-full flex-col items-stretch rounded-xl border border-slate-200/80 bg-white p-4 text-left',
         'transition-all duration-200',
-        'hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300',
+        'hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300',
       )}
     >
       <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ export function IncidentPatternCard({
           #{rank}
         </span>
         <ArrowUpRight
-          className="h-3.5 w-3.5 text-slate-300 transition-colors group-hover:text-blue-500"
+          className="h-3.5 w-3.5 text-slate-300 transition-colors group-hover:text-violet-500"
           aria-hidden
         />
       </div>

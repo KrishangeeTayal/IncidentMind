@@ -125,7 +125,7 @@ export function AiCopilotPanel({
           <div className="rounded-lg border bg-muted/30 p-3">
             <div className="flex items-center gap-2">
               {active ? (
-                <Loader2 className="h-4 w-4 animate-spin text-blue-600" aria-hidden />
+                <Loader2 className="h-4 w-4 animate-spin text-violet-600" aria-hidden />
               ) : (
                 <Sparkles className="h-4 w-4 text-muted-foreground" aria-hidden />
               )}
@@ -203,8 +203,8 @@ export function AiCopilotPanel({
         {/* Human approval */}
         <div className="flex items-center justify-between rounded-lg border bg-muted/30 p-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 ring-1 ring-blue-100">
-              <ShieldCheck className="h-4 w-4 text-blue-600" aria-hidden />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-50 ring-1 ring-violet-100">
+              <ShieldCheck className="h-4 w-4 text-violet-600" aria-hidden />
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -244,7 +244,7 @@ export function AiCopilotPanel({
                   key={a.id}
                   className="flex items-start gap-3 rounded-lg border bg-white p-2.5 text-xs"
                 >
-                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                  <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500" />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between gap-2">
                       <span className="font-medium text-foreground">{a.title}</span>
