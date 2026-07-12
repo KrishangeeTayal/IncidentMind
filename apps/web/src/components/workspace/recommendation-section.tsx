@@ -68,7 +68,7 @@ export function RecommendationSection({
       >
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-blue-700">
               Recommended action
             </p>
             <h3 className="mt-1 text-xl font-semibold leading-snug tracking-tight text-slate-900">

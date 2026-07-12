@@ -73,11 +73,11 @@ const TONE: Record<
     dot: 'bg-blue-500',
   },
   ai: {
-    tint: 'bg-violet-50',
-    text: 'text-violet-600',
-    chip: 'bg-violet-50',
-    chipText: 'text-violet-700',
-    dot: 'bg-violet-500',
+    tint: 'bg-blue-50',
+    text: 'text-blue-600',
+    chip: 'bg-blue-50',
+    chipText: 'text-blue-700',
+    dot: 'bg-blue-500',
   },
   muted: {
     tint: 'bg-slate-100',

@@ -7,7 +7,8 @@
 
 import { ok, parseJsonBody, withErrorHandling } from '@/server/http';
 import { IncidentService, TimelineService } from '@/server/services';
-import { newCorrelationId, type CreateAlertRequest } from '@incidentmind/shared';
+import { newCorrelationId } from '@incidentmind/shared/logger';
+import type { CreateAlertRequest } from '@incidentmind/shared';
 import { ServiceError } from '@/server/errors';
 
 export const POST = withErrorHandling(async (request: Request) => {

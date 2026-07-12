@@ -6,7 +6,8 @@
 
 import { fail, ok, parseJsonBody, withErrorHandling } from '@/server/http';
 import { ApprovalService, TimelineService } from '@/server/services';
-import { newCorrelationId, type ApprovalRequest } from '@incidentmind/shared';
+import { newCorrelationId } from '@incidentmind/shared/logger';
+import type { ApprovalRequest } from '@incidentmind/shared';
 
 interface RouteContext {
   params: { id: string };

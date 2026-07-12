@@ -1,204 +1,45 @@
-# IncidentMind
+# IncidentMind — UI Redesign Patch
 
-> **AI-powered Incident Response Platform built with Mastra, Qdrant and Enkrypt AI.**
+This archive contains every file modified during the UI redesign session.
+The changes implement an enterprise SaaS look (Linear / Vercel / Datadog
+style) with a blue primary palette, light gray background, separated
+cards, and a dark sidebar.
 
-Reduce Mean Time To Resolution (MTTR) through intelligent multi-agent investigations, semantic knowledge retrieval and safe human-in-the-loop approvals.
+## What's in here
 
-working link - https://incidentmind.vercel.app/
----
+| Tier | Files | Purpose |
+|------|-------|---------|
+| 1 (foundation) | `globals.css`, `ui/button.tsx`, `ui/badge.tsx`, `ui/card.tsx` | Design tokens, new card style, blue primary |
+| 2 (chrome) | `sidebar.tsx`, `top-bar.tsx`, `app-shell.tsx`, `page-header.tsx` | Dark sidebar, white floating nav, slate-50 background |
+| 3 (recolor) | 20+ component files | Purple/violet/fuchsia → blue across all components |
+| 4 (polish) | Page orchestrators, headers, section heading | Larger titles, more spacing, better grid gaps |
 
-## Problem
+## What didn't change
 
-When production incidents occur, engineering teams often spend valuable time manually correlating logs, metrics, deployment history and previous incidents before identifying the root cause.
+- Backend (services, API routes, Prisma)
+- Business logic
+- State management
+- Routing
+- Page structure / component hierarchy
 
-This delays recovery, increases downtime, and places unnecessary pressure on on-call engineers.
+Only Tailwind classes, spacing, and color tokens were modified.
 
-IncidentMind accelerates incident response by orchestrating AI agents that investigate incidents, retrieve historical context, generate remediation recommendations, evaluate their safety, and always require human approval before any action is taken.
+## Apply
 
----
-### Dashboard
-
-> <img width="1353" height="633" alt="image" src="https://github.com/user-attachments/assets/8d2185d7-7660-4d13-aa30-df7332b28f99" />
-
-
-### Incident Investigation Workspace
-
-> <img width="1353" height="635" alt="image" src="https://github.com/user-attachments/assets/2c535cbb-8720-4850-80af-10169df96957" />
-
-
-### Analytics
-
-> <img width="1349" height="633" alt="image" src="https://github.com/user-attachments/assets/9087f3a0-1664-457c-8310-6f085014864b" />
-
-### Knowledge Base
-
-> <img width="1351" height="633" alt="image" src="https://github.com/user-attachments/assets/22c44e73-6c1c-4e79-b860-de743de3e7b0" />
-
----
-
-# Features
-
-- AI-powered incident investigation
-- Multi-agent orchestration using Mastra
-- Human-in-the-loop approval workflow
-- Semantic incident retrieval with Qdrant
-- AI safety evaluation using Enkrypt AI
-- Historical incident knowledge base
-- Operational analytics dashboard
-- Root cause analysis workflow
-- Evidence correlation
-- Interactive production incident simulator
-
----
-
-# How It Works
-
-```text
-Production Alert
-        │
-        ▼
-Mastra Agent Workflow
-        │
-        ▼
-Collect Logs + Metrics + Traces
-        │
-        ▼
-Retrieve Similar Incidents (Qdrant)
-        │
-        ▼
-Root Cause Analysis
-        │
-        ▼
-Generate Recommendation
-        │
-        ▼
-Enkrypt AI Safety Evaluation
-        │
-        ▼
-Human Approval
-        │
-        ▼
-Incident Resolution
-
----
-
-## Architecture Overview
-
-- **Mastra** — AI agent orchestration
-- **Qdrant** — semantic search and long-term memory (RAG) _(future)_
-- **Enkrypt AI** — output evaluation, hallucination detection, safety guardrails _(future)_
-- **Next.js + Prisma + PostgreSQL** — web app, API, and persistence
-
----
-
-## Repository Structure
-
-```
-incidentmind/
-├── apps/
-│   ├── web/         # Next.js application (UI + API routes)
-│   └── mastra/      # Mastra AI orchestration service
-├── packages/
-│   ├── agents/      # Reusable agent definitions
-│   ├── tools/       # Tools available to agents
-│   ├── prompts/     # LLM prompt templates
-│   ├── shared/      # Shared TypeScript types and utilities
-│   └── ui/          # Shared UI components
-├── database/        # Prisma schema and migrations
-├── docs/            # Project documentation
-└── package.json     # Root workspace configuration
+```powershell
+cd C:\Users\user\Desktop\IncidentMind
+# Extract on top of the existing repo (preserving paths)
+tar -xzf incidentmind-ui-redesign.tar.gz -C C:\Users\user\Desktop\IncidentMind
 ```
 
----
+Or, if you extracted with a top-level dir, use `--strip-components=1`.
 
-## Getting Started
+## Deploy
 
-### Prerequisites
+After applying, redeploy:
 
-- **Node.js** >= 18.18
-- **pnpm** >= 8.15
-- **PostgreSQL** running locally (or a remote instance)
-
-### 1. Install dependencies
-
-```bash
-pnpm install
+```powershell
+vercel --prod
 ```
 
-### 2. Configure environment variables
-
-```bash
-cp .env.example .env
-# Edit .env and fill in DATABASE_URL and any LLM provider keys you have.
-```
-
-### 3. Generate the Prisma client
-
-```bash
-pnpm --filter @incidentmind/web prisma:generate
-```
-
-### 4. Run all apps in development
-
-```bash
-pnpm dev
-```
-
-This runs `apps/web` (Next.js) and `apps/mastra` in parallel.
-
-You can also run them individually:
-
-```bash
-pnpm dev:web      # Next.js only
-pnpm dev:mastra   # Mastra only
-```
-
-### Default ports
-
-| App           | Port |
-| ------------- | ---- |
-| `apps/web`    | 3000 |
-| `apps/mastra` | 4111 |
-
----
-
-## Scripts
-
-| Command                 | Description                              |
-| ----------------------- | ---------------------------------------- |
-| `pnpm dev`              | Run all apps in dev mode (parallel)      |
-| `pnpm dev:web`          | Run only the Next.js web app             |
-| `pnpm dev:mastra`       | Run only the Mastra service              |
-| `pnpm build`            | Build all apps                           |
-| `pnpm lint`             | Lint all packages                        |
-| `pnpm typecheck`        | TypeScript checks across all packages    |
-| `pnpm format`           | Format the codebase with Prettier        |
-
----
-
-## Current Status
-
-This repository contains the **project foundation only**.
-
-Implemented:
-- Monorepo workspace structure
-- Next.js + TypeScript + Tailwind + shadcn/ui
-- Prisma + PostgreSQL wiring
-- Mastra base configuration
-- Placeholder pages
-- Shared types package
-
-Not yet implemented (per spec):
-- API endpoints
-- AI agents
-- Qdrant integration
-- Enkrypt AI integration
-- Business logic, database schema, auth
-
-See `docs/` for the design plan and roadmap.
-
----
-
-## License
-
-Internal hackathon project.
+The build should still pass — only Tailwind classes changed, no logic.

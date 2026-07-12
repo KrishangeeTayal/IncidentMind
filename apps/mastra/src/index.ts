@@ -1,9 +1,15 @@
-// Mastra service entry point.
+// Mastra instance — required entry point for `mastra build`.
 //
-// Re-exports the workflow and the agent layer so consumers can import
-// a stable surface from a single path.
+// The IncidentMind pipeline is wired as plain TypeScript functions in
+// src/workflows. This file just gives the build CLI a valid `Mastra`
+// instance to discover. Workflows and agents are loaded as file-based
+// primitives automatically.
 
-export { default } from '../mastra.config';
-export * from './workflows/incident-workflow';
-export * from '@incidentmind/agents';
-export * from '@incidentmind/prompts';
+import { Mastra } from '@mastra/core';
+import { APP_NAME } from '@incidentmind/shared';
+
+export const mastra = new Mastra({
+  name: APP_NAME,
+});
+
+export default mastra;

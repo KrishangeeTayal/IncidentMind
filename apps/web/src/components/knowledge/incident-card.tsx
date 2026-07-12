@@ -35,7 +35,7 @@ const SERVICE_LABEL: Record<ServiceFilter['id'], string> = {
 const SERVICE_DOT: Record<ServiceFilter['id'], string> = {
   payments: 'bg-blue-500',
   redis: 'bg-rose-500',
-  database: 'bg-violet-500',
+  database: 'bg-blue-500',
   'api-gateway': 'bg-emerald-500',
   infrastructure: 'bg-amber-500',
 };
@@ -52,7 +52,7 @@ const STATUS_TONE: Record<KnowledgeIncident['status'], {
 
 function similarityTone(score: number): string {
   if (score >= 90) return 'bg-blue-50 text-blue-700 border-blue-200';
-  if (score >= 80) return 'bg-violet-50 text-violet-700 border-violet-200';
+  if (score >= 80) return 'bg-blue-50 text-blue-700 border-blue-200';
   return 'bg-slate-50 text-slate-700 border-slate-200';
 }
 

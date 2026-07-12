@@ -8,7 +8,8 @@
 
 import { ok, parseJsonBody, withErrorHandling } from '@/server/http';
 import { ServiceError } from '@/server/errors';
-import { newCorrelationId, type ReplayWorkflowRequest } from '@incidentmind/shared';
+import { newCorrelationId } from '@incidentmind/shared/logger';
+import type { ReplayWorkflowRequest } from '@incidentmind/shared';
 import { prisma } from '@/lib/prisma';
 
 interface RouteContext {

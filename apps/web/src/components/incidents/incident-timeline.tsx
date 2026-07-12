@@ -25,7 +25,7 @@ export function IncidentTimeline({ events }: IncidentTimelineProps): JSX.Element
       <CardContent className="pt-0">
         {ordered.length === 0 ? (
           <p className="rounded-md border border-dashed p-6 text-center text-sm text-muted-foreground">
-            The workflow hasn't produced any events for this incident.
+            The workflow hasn&apos;t produced any events for this incident.
           </p>
         ) : (
           <ol className="space-y-3">

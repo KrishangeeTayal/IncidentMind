@@ -146,7 +146,7 @@ interface StatusTileProps {
 const TILE_TONE: Record<StatusTileProps['tone'], { ring: string; icon: string; bg: string }> = {
   blue: { ring: 'ring-blue-100', icon: 'text-blue-600', bg: 'bg-blue-50' },
   emerald: { ring: 'ring-emerald-100', icon: 'text-emerald-600', bg: 'bg-emerald-50' },
-  purple: { ring: 'ring-violet-100', icon: 'text-violet-600', bg: 'bg-violet-50' },
+  purple: { ring: 'ring-blue-100', icon: 'text-blue-600', bg: 'bg-blue-50' },
   slate: { ring: 'ring-slate-100', icon: 'text-slate-600', bg: 'bg-slate-50' },
 };
 

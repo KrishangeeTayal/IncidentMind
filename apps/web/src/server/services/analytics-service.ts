@@ -4,7 +4,7 @@
 // without re-computing on the client.
 
 import { prisma } from '@/lib/prisma';
-import { rootLogger } from '@incidentmind/shared';
+import { rootLogger } from '@incidentmind/shared/logger';
 
 const log = rootLogger.child('analytics-service');
 
@@ -28,7 +28,7 @@ export class AnalyticsService {
    * the database is empty.
    */
   static async summary(): Promise<AnalyticsSummary> {
-    log.info('summary', 'analytics-service', 'compute');
+    log.info('summary compute');
 
     const [all, bySeverity, byService, resolved] = await Promise.all([
       prisma.incident.groupBy({ by: ['status'], _count: { _all: true } }),
@@ -46,7 +46,10 @@ export class AnalyticsService {
     ]);
 
     const totals = {
-      incidents: all.reduce((acc, r) => acc + r._count._all, 0),
+      incidents: all.reduce(
+        (acc: number, r: { _count: { _all: number } }) => acc + r._count._all,
+        0,
+      ),
       open: 0,
       investigating: 0,
       mitigated: 0,
@@ -85,7 +88,10 @@ export class AnalyticsService {
         ? null
         : Math.round(
             resolved.reduce(
-              (acc, r) => acc + (r.updatedAt.getTime() - r.createdAt.getTime()),
+              (
+                acc: number,
+                r: { createdAt: Date; updatedAt: Date },
+              ) => acc + (r.updatedAt.getTime() - r.createdAt.getTime()),
               0,
             ) / resolved.length / 1000,
           );
@@ -93,7 +99,12 @@ export class AnalyticsService {
     return {
       totals,
       bySeverity: sevCounts,
-      byService: byService.map((r) => ({ service: r.service, count: r._count._all })),
+      byService: byService.map(
+        (r: { service: string; _count: { _all: number } }) => ({
+          service: r.service,
+          count: r._count._all,
+        }),
+      ),
       mttrSeconds,
     };
   }
@@ -107,7 +118,7 @@ export class AnalyticsService {
     pendingApprovals: number;
     mttrSeconds: number | null;
   }> {
-    log.info('dashboard', 'analytics-service', 'compute');
+    log.info('dashboard compute');
 
     const [active, pending, resolved] = await Promise.all([
       prisma.incident.count({
@@ -125,7 +136,10 @@ export class AnalyticsService {
         ? null
         : Math.round(
             resolved.reduce(
-              (acc, r) => acc + (r.updatedAt.getTime() - r.createdAt.getTime()),
+              (
+                acc: number,
+                r: { createdAt: Date; updatedAt: Date },
+              ) => acc + (r.updatedAt.getTime() - r.createdAt.getTime()),
               0,
             ) / resolved.length / 1000,
           );

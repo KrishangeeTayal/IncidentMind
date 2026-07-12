@@ -37,7 +37,7 @@ export function AIInvestigationEngine(): JSX.Element {
     >
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-white">
             <Brain className="h-3.5 w-3.5" aria-hidden />
           </span>
           <div>
@@ -47,7 +47,7 @@ export function AIInvestigationEngine(): JSX.Element {
             <p className="text-[11px] text-slate-500">Multi-agent workflow</p>
           </div>
         </div>
-        <span className="inline-flex items-center gap-1.5 rounded-md bg-violet-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-blue-700">
           <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
           Running
         </span>
@@ -75,7 +75,7 @@ export function AIInvestigationEngine(): JSX.Element {
           label="Current Step"
           value={
             <span className="inline-flex items-center gap-1.5">
-              <Loader2 className="h-3 w-3 animate-spin text-violet-600" />
+              <Loader2 className="h-3 w-3 animate-spin text-blue-600" />
               {activeStep?.label ?? inv.currentStep}
             </span>
           }
@@ -112,8 +112,8 @@ export function AIInvestigationEngine(): JSX.Element {
       </dl>
 
       {/* Root cause callout */}
-      <div className="mt-3 rounded-xl border border-violet-100 bg-violet-50/40 p-3.5">
-        <p className="text-[10px] font-medium uppercase tracking-wider text-violet-700">
+      <div className="mt-3 rounded-xl border border-blue-100 bg-blue-50/40 p-3.5">
+        <p className="text-[10px] font-medium uppercase tracking-wider text-blue-700">
           Root cause (preliminary)
         </p>
         <p className="mt-1 text-xs leading-relaxed text-slate-700">
@@ -214,8 +214,8 @@ function WorkflowRow({
             <CheckCircle2 className="h-3 w-3" aria-hidden />
           </span>
         ) : isActive ? (
-          <span className="relative flex h-5 w-5 items-center justify-center rounded-full bg-violet-100 text-violet-600 ring-1 ring-violet-200">
-            <span className="absolute inset-0 animate-ping rounded-full bg-violet-400 opacity-30" />
+          <span className="relative flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600 ring-1 ring-blue-200">
+            <span className="absolute inset-0 animate-ping rounded-full bg-blue-400 opacity-30" />
             <Sparkles className="relative h-2.5 w-2.5" aria-hidden />
           </span>
         ) : (
@@ -228,7 +228,7 @@ function WorkflowRow({
             aria-hidden
             className={cn(
               'mt-0.5 w-px flex-1',
-              isDone ? 'bg-emerald-200' : isActive ? 'bg-violet-200' : 'bg-slate-200',
+              isDone ? 'bg-emerald-200' : isActive ? 'bg-blue-200' : 'bg-slate-200',
             )}
           />
         ) : null}
@@ -246,7 +246,7 @@ function WorkflowRow({
           <p
             className={cn(
               'mt-0.5 text-[11px]',
-              isActive ? 'text-violet-700' : 'text-slate-500',
+              isActive ? 'text-blue-700' : 'text-slate-500',
             )}
           >
             {step.detail}

@@ -11,7 +11,7 @@ export function KnowledgeKpis(): JSX.Element {
   return (
     <section
       aria-label="Knowledge metrics"
-      className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
     >
       <OverviewKpiCard
         label="Historical Incidents"

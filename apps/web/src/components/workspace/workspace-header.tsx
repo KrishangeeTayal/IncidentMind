@@ -126,11 +126,11 @@ export function WorkspaceHeader({
       <div className="im-card p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-3">
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
               <Sparkles className="h-4 w-4" aria-hidden />
             </span>
             <div>
-              <p className="text-[11px] font-medium uppercase tracking-wider text-violet-700">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-blue-700">
                 AI Recommendation Ready
               </p>
               <p className="mt-0.5 text-base font-semibold text-slate-900">

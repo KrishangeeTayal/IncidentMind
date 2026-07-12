@@ -5,7 +5,8 @@
 // records those decisions and exposes queries for the UI.
 
 import { prisma } from '@/lib/prisma';
-import { newCorrelationId, rootLogger } from '@incidentmind/shared';
+import { Prisma } from '@prisma/client';
+import { newCorrelationId, rootLogger } from '@incidentmind/shared/logger';
 import { ServiceError } from '../errors';
 import { mapApproval } from '../dto';
 import type { Approval, ApprovalDecision } from '@incidentmind/shared';
@@ -28,7 +29,7 @@ export class ApprovalService {
   /** Open a new pending approval for an incident. */
   static async createPending(input: CreateApprovalInput): Promise<Approval> {
     const correlationId = newCorrelationId();
-    log.start('createPending', correlationId, { incidentId: input.incidentId });
+    log.start('createPending', { incidentId: input.incidentId, correlationId });
     try {
       // Ensure the parent incident exists.
       const exists = await prisma.incident.findUnique({
@@ -43,21 +44,21 @@ export class ApprovalService {
         data: {
           incidentId: input.incidentId,
           decision: 'PENDING',
-          payload: input.payload ?? {},
+          payload: (input.payload ?? undefined) as Prisma.InputJsonValue | undefined,
         },
       });
-      log.succeed('createPending', correlationId, { id: created.id });
+      log.succeed('createPending', { id: created.id, correlationId });
       return mapApproval(created);
     } catch (error) {
       if (error instanceof ServiceError) throw error;
-      log.fail('createPending', correlationId, error);
+      log.fail('createPending', { error, correlationId });
       throw new ServiceError('INTERNAL', 'Failed to create approval');
     }
   }
 
   /** List approvals for an incident, most recent first. */
   static async listForIncident(incidentId: string): Promise<Approval[]> {
-    log.info('listForIncident', correlationIdFor(incidentId), 'list');
+    log.info('listForIncident', { correlationId: correlationIdFor(incidentId) });
     const rows = await prisma.approval.findMany({
       where: { incidentId },
       orderBy: { createdAt: 'desc' },
@@ -71,7 +72,7 @@ export class ApprovalService {
    */
   static async decide(input: DecideApprovalInput): Promise<Approval> {
     const correlationId = newCorrelationId();
-    log.start('decide', correlationId, { approvalId: input.approvalId, decision: input.decision });
+    log.start('decide', { approvalId: input.approvalId, decision: input.decision, correlationId });
     try {
       const existing = await prisma.approval.findUnique({ where: { id: input.approvalId } });
       if (!existing) {
@@ -90,11 +91,11 @@ export class ApprovalService {
           decidedAt: new Date(),
         },
       });
-      log.succeed('decide', correlationId, { id: updated.id, decision: updated.decision });
+      log.succeed('decide', { id: updated.id, decision: updated.decision, correlationId });
       return mapApproval(updated);
     } catch (error) {
       if (error instanceof ServiceError) throw error;
-      log.fail('decide', correlationId, error);
+      log.fail('decide', { error, correlationId });
       throw new ServiceError('INTERNAL', 'Failed to decide approval');
     }
   }
@@ -104,7 +105,7 @@ export class ApprovalService {
    * Used by the approve/reject endpoints.
    */
   static async latestPendingForIncident(incidentId: string): Promise<Approval | null> {
-    log.info('latestPendingForIncident', correlationIdFor(incidentId), 'lookup');
+    log.info('latestPendingForIncident', { correlationId: correlationIdFor(incidentId) });
     const row = await prisma.approval.findFirst({
       where: { incidentId, decision: 'PENDING' },
       orderBy: { createdAt: 'desc' },

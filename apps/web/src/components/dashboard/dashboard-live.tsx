@@ -8,11 +8,19 @@ import {
   Plus,
   ShieldCheck,
 } from 'lucide-react';
-import type {
-  AnalyticsSummary,
-  Incident,
-  IncidentSeverity,
-} from '@incidentmind/shared';
+import type { Incident, IncidentSeverity } from '@incidentmind/shared';
+
+interface AnalyticsSummary {
+  totals: {
+    incidents: number;
+    open: number;
+    investigating: number;
+    mitigated: number;
+    resolved: number;
+  };
+  mttrSeconds: number | null;
+}
+
 import { KpiCard } from './kpi-card';
 import { SeverityDistribution } from './severity-distribution';
 import { HeroBanner } from './hero-banner';
@@ -169,7 +177,7 @@ export function DashboardLive({
       {/* KPI grid */}
       <section
         aria-label="Key metrics"
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         <KpiCard
           label="Active incidents"
@@ -191,7 +199,8 @@ export function DashboardLive({
         />
         <KpiCard
           label="MTTR"
-          value={formatDuration(mttrSeconds)}
+          value={0}
+          displayValue={formatDuration(mttrSeconds)}
           icon={Clock}
           tone="blue"
           trend={-8.6}
@@ -210,7 +219,7 @@ export function DashboardLive({
       </section>
 
       {/* AI Copilot + Severity distribution */}
-      <section className="grid gap-4 xl:grid-cols-3">
+      <section className="grid gap-6 xl:grid-cols-3">
         <div className="xl:col-span-2">
           <AiCopilotPanel
             phase={activeScenario.phase}
@@ -253,7 +262,7 @@ export function DashboardLive({
           isDemoRunning={demo.running}
         />
       ) : (
-        <section className="grid gap-4 xl:grid-cols-3">
+        <section className="grid gap-6 xl:grid-cols-3">
           <div className="xl:col-span-2">
             <LiveIncidentFeed
               incidents={merged}

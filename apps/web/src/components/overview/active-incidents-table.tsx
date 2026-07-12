@@ -52,7 +52,7 @@ const SERVICE_LABEL: Record<string, string> = {
 const SERVICE_ICON_BG: Record<string, string> = {
   payments: 'bg-blue-50 text-blue-600',
   redis: 'bg-orange-50 text-orange-600',
-  database: 'bg-violet-50 text-violet-600',
+  database: 'bg-blue-50 text-blue-600',
   'api-gateway': 'bg-emerald-50 text-emerald-600',
   infrastructure: 'bg-amber-50 text-amber-600',
 };

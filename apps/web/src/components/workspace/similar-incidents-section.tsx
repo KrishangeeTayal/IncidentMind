@@ -83,7 +83,7 @@ function SimilarityBadge({ value }: { value: number }): JSX.Element {
     value >= 90
       ? 'bg-blue-50 text-blue-700'
       : value >= 80
-      ? 'bg-violet-50 text-violet-700'
+      ? 'bg-blue-50 text-blue-700'
       : 'bg-slate-100 text-slate-600';
   return (
     <span

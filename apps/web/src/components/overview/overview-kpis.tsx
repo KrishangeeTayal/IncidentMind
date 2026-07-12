@@ -6,11 +6,12 @@ import {
   Clock,
   ShieldCheck,
   Sparkles,
+  type LucideIcon,
 } from 'lucide-react';
 import { overviewKpis } from '@/lib/overview-data';
 import { OverviewKpiCard, type OverviewKpiCardProps } from './overview-kpi-card';
 
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+const ICON_MAP: Record<string, LucideIcon> = {
   'Active Incidents': Activity,
   'Pending Approvals': ShieldCheck,
   'Average MTTR': Clock,

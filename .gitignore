@@ -44,3 +44,5 @@ apps/web/prisma/migrations/dev/
 # Misc
 .turbo
 .cache
+
+.vercel

@@ -69,7 +69,7 @@ export default async function IncidentsHistoryPage({ searchParams }: PageProps):
   return (
     <AppShell>
       <header className="mb-6 flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold tracking-tight">Incident history</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Incident history</h1>
         <p className="text-sm text-muted-foreground">
           Browse and search past incidents. Click any row to open the full record.
         </p>

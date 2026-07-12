@@ -6,7 +6,8 @@ const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
     <div
       ref={ref}
       className={cn(
-        'rounded-2xl border border-slate-200/80 bg-white text-card-foreground shadow-[0_1px_2px_0_rgb(15_23_42_/_0.04)]',
+        'rounded-xl border border-slate-200 bg-white text-card-foreground shadow-sm',
+        'shadow-[0_1px_2px_0_rgb(15_23_42_/_0.04),0_1px_3px_0_rgb(15_23_42_/_0.06)]',
         className,
       )}
       {...props}
@@ -31,7 +32,7 @@ const CardTitle = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
     <div
       ref={ref}
       className={cn(
-        'text-base font-semibold leading-tight tracking-tight text-slate-900',
+        'text-lg font-semibold leading-tight tracking-tight text-slate-900',
         className,
       )}
       {...props}

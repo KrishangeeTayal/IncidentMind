@@ -24,7 +24,7 @@ export function AnalyticsKpis({ kpis }: AnalyticsKpisProps): JSX.Element {
   return (
     <section
       aria-label="Key metrics"
-      className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
     >
       <OverviewKpiCard
         label="Total Incidents"

@@ -5,7 +5,7 @@
 // will be added in later iterations.
 
 import { prisma } from '@/lib/prisma';
-import { newCorrelationId, rootLogger } from '@incidentmind/shared';
+import { newCorrelationId, rootLogger } from '@incidentmind/shared/logger';
 import { ServiceError } from '../errors';
 import { mapIncident } from '../dto';
 import type { Incident, IncidentSeverity, IncidentStatus } from '@incidentmind/shared';
@@ -37,7 +37,7 @@ export class IncidentService {
   /** Create a new incident. */
   static async create(input: CreateIncidentInput): Promise<Incident> {
     const correlationId = input.correlationId ?? newCorrelationId();
-    log.start('create', correlationId, { title: input.title, service: input.service });
+    log.start('create', { title: input.title, service: input.service, correlationId });
 
     try {
       const created = await prisma.incident.create({
@@ -53,17 +53,17 @@ export class IncidentService {
           workflowRunId: input.workflowRunId ?? null,
         },
       });
-      log.succeed('create', correlationId, { id: created.id });
+      log.succeed('create', { id: created.id, correlationId });
       return mapIncident(created);
     } catch (error) {
-      log.fail('create', correlationId, error);
+      log.fail('create', { error, correlationId });
       throw new ServiceError('INTERNAL', 'Failed to create incident');
     }
   }
 
   /** Look up a single incident by id. Throws NOT_FOUND if missing. */
   static async getById(id: string): Promise<Incident> {
-    log.info('getById', id, 'lookup');
+    log.info('getById', { id });
     const found = await prisma.incident.findUnique({ where: { id } });
     if (!found) {
       throw new ServiceError('NOT_FOUND', `Incident ${id} not found`);
@@ -73,7 +73,7 @@ export class IncidentService {
 
   /** List incidents with simple filters and cursor pagination. */
   static async list(options: ListIncidentsOptions = {}): Promise<Incident[]> {
-    log.info('list', 'incident-service', options as Record<string, unknown>);
+    log.info('list', options as Record<string, unknown>);
     const take = clamp(options.limit ?? 50, 1, 200);
     const where: Record<string, unknown> = {};
     if (options.status) where.status = toPrismaStatus(options.status);
@@ -94,7 +94,7 @@ export class IncidentService {
    * most recently updated. Used by the history page.
    */
   static async history(options: ListIncidentsOptions = {}): Promise<Incident[]> {
-    log.info('history', 'incident-service', options as Record<string, unknown>);
+    log.info('history', options as Record<string, unknown>);
     const take = clamp(options.limit ?? 100, 1, 500);
     const rows = await prisma.incident.findMany({
       where: {
@@ -113,16 +113,16 @@ export class IncidentService {
    */
   static async updateStatus(id: string, next: IncidentStatus): Promise<Incident> {
     const correlationId = newCorrelationId();
-    log.start('updateStatus', correlationId, { id, next });
+    log.start('updateStatus', { id, next, correlationId });
     try {
       const updated = await prisma.incident.update({
         where: { id },
         data: { status: toPrismaStatus(next) },
       });
-      log.succeed('updateStatus', correlationId, { id });
+      log.succeed('updateStatus', { id, correlationId });
       return mapIncident(updated);
     } catch (error) {
-      log.fail('updateStatus', correlationId, error);
+      log.fail('updateStatus', { error, correlationId });
       throw new ServiceError('NOT_FOUND', `Incident ${id} not found`);
     }
   }

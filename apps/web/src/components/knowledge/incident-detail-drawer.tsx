@@ -188,9 +188,9 @@ function DrawerBody({
         <Section
           icon={Brain}
           title="AI Recommendation"
-          accent="violet"
+          accent="blue"
           trailing={
-            <span className="inline-flex items-center gap-1 rounded-md border border-violet-200 bg-violet-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-violet-700">
+            <span className="inline-flex items-center gap-1 rounded-md border border-blue-200 bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-blue-700">
               {incident.confidence}% confidence
             </span>
           }
@@ -251,7 +251,7 @@ function DrawerBody({
         <Section
           icon={ShieldCheck}
           title="Preventive Action"
-          accent="violet"
+          accent="blue"
         >
           <p className="text-sm leading-relaxed text-slate-600">
             {incident.preventiveAction}
@@ -289,7 +289,7 @@ function Section({
 }: SectionProps): JSX.Element {
   const iconTone = (() => {
     switch (accent) {
-      case 'violet':  return 'bg-violet-50 text-violet-600';
+      case 'violet':  return 'bg-blue-50 text-blue-600';
       case 'emerald': return 'bg-emerald-50 text-emerald-600';
       case 'amber':   return 'bg-amber-50 text-amber-600';
       case 'blue':    return 'bg-blue-50 text-blue-600';

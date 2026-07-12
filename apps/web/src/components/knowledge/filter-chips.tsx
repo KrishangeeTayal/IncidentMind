@@ -43,7 +43,7 @@ const SEVERITY_DOT: Record<SeverityFilter['id'], string> = {
 const SERVICE_TONE: Record<ServiceFilter['id'], string> = {
   payments:       'data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 data-[active=true]:border-blue-200 data-[active=true]:ring-blue-100',
   redis:          'data-[active=true]:bg-rose-50 data-[active=true]:text-rose-700 data-[active=true]:border-rose-200 data-[active=true]:ring-rose-100',
-  database:       'data-[active=true]:bg-violet-50 data-[active=true]:text-violet-700 data-[active=true]:border-violet-200 data-[active=true]:ring-violet-100',
+  database:       'data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 data-[active=true]:border-blue-200 data-[active=true]:ring-blue-100',
   'api-gateway':  'data-[active=true]:bg-emerald-50 data-[active=true]:text-emerald-700 data-[active=true]:border-emerald-200 data-[active=true]:ring-emerald-100',
   infrastructure: 'data-[active=true]:bg-amber-50 data-[active=true]:text-amber-700 data-[active=true]:border-amber-200 data-[active=true]:ring-amber-100',
 };
@@ -51,7 +51,7 @@ const SERVICE_TONE: Record<ServiceFilter['id'], string> = {
 const SERVICE_DOT: Record<ServiceFilter['id'], string> = {
   payments: 'bg-blue-500',
   redis: 'bg-rose-500',
-  database: 'bg-violet-500',
+  database: 'bg-blue-500',
   'api-gateway': 'bg-emerald-500',
   infrastructure: 'bg-amber-500',
 };

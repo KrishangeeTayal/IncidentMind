@@ -6,7 +6,7 @@ export function KnowledgeHeader(): JSX.Element {
   return (
     <header className="space-y-3">
       <div className="flex items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-[11px] font-medium text-violet-700">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-1 text-[11px] font-medium text-blue-700">
           <Sparkles className="h-3 w-3" aria-hidden />
           AI Memory
         </span>
@@ -15,7 +15,7 @@ export function KnowledgeHeader(): JSX.Element {
           742 incidents indexed
         </span>
       </div>
-      <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-slate-900">
+      <h1 className="flex items-center gap-2 text-3xl font-bold tracking-tight text-slate-900">
         <BookOpen className="h-5 w-5 text-slate-500" aria-hidden />
         Knowledge
       </h1>

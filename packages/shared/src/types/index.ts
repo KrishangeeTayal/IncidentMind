@@ -128,7 +128,7 @@ export interface ApprovalRequest {
   reason?: string;
   decidedById?: string;
   // Free-form payload describing the recommendation being approved/rejected.
-  payload?: Record<string, unknown>;
+  payload?: Record<string, any>;
 }
 
 export interface ReplayWorkflowRequest {

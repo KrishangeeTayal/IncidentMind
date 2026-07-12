@@ -22,7 +22,7 @@ const badgeVariants = cva(
         medium: 'bg-amber-50 text-amber-700',
         low: 'bg-sky-50 text-sky-700',
         // AI
-        ai: 'bg-violet-50 text-violet-700',
+        ai: 'bg-blue-50 text-blue-700',
       },
     },
     defaultVariants: {

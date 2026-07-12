@@ -72,10 +72,10 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
         {confidence !== null ? (
           <>
             <span className="text-slate-300">·</span>
-            <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-violet-700">
+            <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-blue-700">
               <span
                 aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-violet-500"
+                className="h-1.5 w-1.5 rounded-full bg-blue-500"
               />
               {confidence}% AI confidence
             </span>
@@ -113,13 +113,12 @@ export function ApprovalCard({ approval }: ApprovalCardProps): JSX.Element {
       <footer className="flex items-center justify-end gap-2 pl-1.5 pt-1">
         {decision === 'pending' ? (
           <>
-            <Link
-              href={`/incidents/${approval.incidentId}`}
-              className="mr-auto inline-flex h-8 items-center justify-center rounded-md border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50"
-            >
-              Open Incident
-            </Link>
-            
+           <Link
+            href={`/incidents/${approval.incidentId}`}
+            className="mr-auto inline-flex h-8 items-center justify-center rounded-md border border-slate-300 bg-white px-3 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-50"
+          >
+            Open Incident
+          </Link>
             <button
               type="button"
               onClick={() => setDecision('rejected')}

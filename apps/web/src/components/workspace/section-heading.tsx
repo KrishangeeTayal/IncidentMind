@@ -35,7 +35,7 @@ export function SectionHeading({
         <div>
           <div className="flex items-center gap-2">
             {Icon ? <Icon className="h-4 w-4 text-slate-500" aria-hidden /> : null}
-            <h2 className="text-base font-semibold tracking-tight text-slate-900">
+            <h2 className="text-lg font-semibold tracking-tight text-slate-900">
               {title}
             </h2>
           </div>
