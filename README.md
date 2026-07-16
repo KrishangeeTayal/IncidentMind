@@ -1,78 +1,55 @@
-🧠 IncidentMind
-AI-Powered Incident Response Platform
-<div align="center">
+# IncidentMind
 
-Reduce Mean Time to Resolution (MTTR) using AI-powered investigation, semantic search, and human-in-the-loop approvals.
+AI-powered Incident Response & Postmortem Agent built with Mastra, Qdrant, and Enkrypt AI.
 
-<br>
+Transform raw incident data into structured timelines, root cause analysis, actionable resolutions, and stakeholder-ready postmortems.
 
+---
 
+## Overview
 
+IncidentMind is an AI-powered incident response platform that helps engineering teams investigate production incidents faster. By orchestrating multiple AI agents, retrieving similar historical incidents through semantic search, and validating AI-generated outputs, IncidentMind reduces the time spent on manual investigation while improving the reliability of incident reports.
 
+---
 
+## The Problem
 
+Production incidents often require engineers to manually:
 
+- Analyze logs and incident reports
+- Build timelines from scattered information
+- Perform root cause analysis
+- Search previous incidents
+- Draft stakeholder updates
+- Write postmortems
 
+These repetitive tasks slow down recovery and increase operational overhead.
 
+---
 
+## Solution
 
+IncidentMind automates the incident investigation workflow using specialized AI agents.
 
+The platform classifies incidents, constructs a detailed timeline, retrieves similar historical incidents using semantic search, performs root cause analysis, validates AI responses through safety guardrails, and generates comprehensive postmortems and communication updates.
 
+---
 
+## Key Features
 
-
+- Multi-agent incident investigation
+- Automatic incident timeline generation
+- AI-powered root cause analysis
+- Semantic retrieval using Qdrant
+- AI output validation with Enkrypt AI
+- Automated postmortem generation
+- Stakeholder communication summaries
+- Confidence scoring for generated insights
 🌐 Live Demo
 
 [https://YOUR-VERCEL-URL.vercel.app](https://incident-mind-web.vercel.app/dashboard)
 
-</div>
-🚀 Why IncidentMind?
 
-When production incidents occur, engineers waste valuable time switching between dashboards, logs, documentation, and previous incident reports.
-
-IncidentMind centralizes this entire workflow.
-
-It investigates incidents using AI agents, retrieves similar historical incidents through semantic search, generates explainable recommendations, and ensures that every critical action is approved by a human before execution.
-
-The result is faster incident resolution, better operational visibility, and safer AI-assisted decision making.
-
-✨ Features
-🤖 AI Investigation
-AI-powered incident analysis
-Root cause reasoning
-Explainable recommendations
-AI-generated summaries
-🔍 Semantic Search (Qdrant)
-Finds similar historical incidents
-Retrieves relevant runbooks
-Context-aware recommendations
-Vector similarity search
-🧠 Multi-Agent Workflow (Mastra)
-Incident Analysis Agent
-Recommendation Agent
-Summary Agent
-Context orchestration
-Structured AI pipeline
-🛡 AI Safety (Enkrypt AI)
-Prompt validation
-Output moderation
-Prompt injection protection
-Safer AI interactions
-👨‍💻 Human-in-the-Loop
-AI suggests actions
-Engineers approve or reject recommendations
-Complete approval history
-Transparent decision making
-📊 Analytics Dashboard
-Incident trends
-MTTR metrics
-Service health overview
-Resolution analytics
-📚 Knowledge Base
-Historical incidents
-AI-generated summaries
-Runbooks
-Semantic search
 🖼 Application Preview
 Dashboard
 
@@ -92,67 +69,7 @@ Analytics
 
 <img width="1349" height="630" alt="image" src="https://github.com/user-attachments/assets/9faf43db-050b-4c5a-bf5c-2730e6c93a3c" />
 
-🏗 Architecture
-               Production Alert
-                      │
-                      ▼
-             AI Investigation (Mastra)
-                      │
-          ┌───────────┴───────────┐
-          ▼                       ▼
- Historical Search          AI Reasoning
-      (Qdrant)                 (LLM)
-          │                       │
-          └───────────┬───────────┘
-                      ▼
-        Explainable Recommendation
-                      │
-                      ▼
-          Human Approval Workflow
-               Approve / Reject
-                      │
-                      ▼
-          Timeline + Incident History
-🧠 AI Workflow
-Production alert is received.
-Mastra agents investigate the incident.
-Qdrant retrieves semantically similar incidents and runbooks.
-AI generates recommendations with explanations.
-Enkrypt AI validates prompts and responses.
-Engineer reviews AI suggestions.
-Approved actions are recorded in the incident timeline.
-⚙ Tech Stack
-Category	Technologies
-Frontend	Next.js, React, TypeScript
-Styling	Tailwind CSS
-Backend	Next.js API Routes
-ORM	Prisma
-Database	PostgreSQL
-AI Framework	Mastra
-Vector Database	Qdrant
-AI Safety	Enkrypt AI
-Deployment	Vercel
-📂 Project Structure
-IncidentMind
-│
-├── apps
-│   ├── web
-│   └── mastra
-│
-├── packages
-│   ├── shared
-│   └── ui
-│
-├── docs
-└── prisma
-🚀 Running Locally
-git clone https://github.com/YOUR_USERNAME/IncidentMind.git
 
-cd IncidentMind
-
-pnpm install
-
-pnpm dev
 🔮 Future Improvements
 Slack integration
 Microsoft Teams integration
@@ -162,8 +79,8 @@ Predictive incident detection
 Automated remediation
 Multi-tenant support
 AI evaluation dashboard
-👩‍💻 Author
 
+👩‍💻 Author
 Krishangee Tayal
 
 Computer Science Engineering Student
