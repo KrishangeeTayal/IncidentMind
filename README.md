@@ -76,19 +76,21 @@ Semantic search
 🖼 Application Preview
 Dashboard
 
-(Insert Dashboard Screenshot)
+<img width="1349" height="631" alt="image" src="https://github.com/user-attachments/assets/825368d1-a7b3-4e7d-b2d0-93b89973b7ca" />
 
 Incident Details
 
-(Insert Incident Details Screenshot)
+<img width="1349" height="637" alt="image" src="https://github.com/user-attachments/assets/13ca3aa5-9579-4221-b1e0-6e43e63c23ba" />
+
 
 Knowledge Base
 
-(Insert Knowledge Base Screenshot)
+<img width="1349" height="634" alt="image" src="https://github.com/user-attachments/assets/c6382986-5ccd-4dcc-bce1-e2e38f6cee6c" />
+
 
 Analytics
 
-(Insert Analytics Screenshot)
+<img width="1349" height="630" alt="image" src="https://github.com/user-attachments/assets/9faf43db-050b-4c5a-bf5c-2730e6c93a3c" />
 
 🏗 Architecture
                Production Alert
