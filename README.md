@@ -48,7 +48,7 @@ The platform classifies incidents, constructs a detailed timeline, retrieves sim
   
 🌐 Live Demo
 
-[https://YOUR-VERCEL-URL.vercel.app](https://incident-mind-web.vercel.app/dashboard)
+https://incident-mind-web.vercel.app/dashboard
 
 
 🖼 Application Preview
