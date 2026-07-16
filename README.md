@@ -45,6 +45,7 @@ The platform classifies incidents, constructs a detailed timeline, retrieves sim
 - Automated postmortem generation
 - Stakeholder communication summaries
 - Confidence scoring for generated insights
+  
 🌐 Live Demo
 
 [https://YOUR-VERCEL-URL.vercel.app](https://incident-mind-web.vercel.app/dashboard)
